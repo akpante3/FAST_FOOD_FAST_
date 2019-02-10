@@ -9,25 +9,25 @@ const intialState = {
 
 export default ( state = intialState, action) => {
    switch( action.type ){
-       case SIGN_UP:{
-        state={
+       case SIGN_UP:
+       return ({
+           ...state,
             email: action.payload.email,
             password: action.payload.password,
             username: action.payload.username,
             address: action.payload.address,
-            data: action.payload
-           }
-           break;
-       }
-        case SIGN_UP_ERROR: {
-            state={
+            payload: action.payload
+           })
+       
+        case SIGN_UP_ERROR:
+        return ({
+                ...state,
                 email: null,
                 password: null,
                 username: null,
                 address: null,
-                data: action.payload
-            }
-        }
+                payloads: action.payload
+            })
        default:
         state;
    }

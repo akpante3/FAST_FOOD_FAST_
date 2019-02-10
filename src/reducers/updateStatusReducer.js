@@ -1,17 +1,16 @@
-import { PLACE_AN_ORDER, PLACE_AN_ORDER_ERROR } from '../actions/types';
+import { UPDATE_ORDER, UPDATE_ORDER_ERROR} from '../actions/types';
 
 const intialState = [];
 
-const placeAnOrderReducer = (state = intialState, action) => {
+const updateOrderReducer = (state = intialState, action) => {
   switch (action.type) {
-    case PLACE_AN_ORDER:
+    case UPDATE_ORDER:
       return ({
         ...state,
         payload: action.payload,
         status: 'SUCCESS',
       });
-
-      case PLACE_AN_ORDER_ERROR:
+      case UPDATE_ORDER_ERROR:
       return ({
         ...state,
         payload: action.payload,
@@ -23,4 +22,4 @@ const placeAnOrderReducer = (state = intialState, action) => {
   }
 };
 
-export default placeAnOrderReducer;
+export default updateOrderReducer;

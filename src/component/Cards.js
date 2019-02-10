@@ -1,9 +1,8 @@
 import React from 'react';
 
 const Cards = (props) => {
-    const storage = JSON.parse(localStorage.getItem('cartItems'));
-
-     const ifExist = storage && storage.find(item => item.foodid == props.foodId);
+        const storage = localStorage.getItem('cartItems') && JSON.parse(localStorage.getItem('cartItems'));
+        const ifExist = storage && storage.find(item => item.foodid == props.foodId);
 
     return (
             <div><img src={props.image} alt="food" /><p> {props.food} </p>

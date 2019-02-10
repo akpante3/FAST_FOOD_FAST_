@@ -28,13 +28,13 @@ class Login extends React.Component {
           this.props.logInAction(userDetails);
         }
     render() {
-        if(this.props.Login === 'failure') {
+        if(this.props.Login === 'FAILURE') {
             const message = document.querySelector(".error-message");
             message.innerHTML='Error user cant be logged in';
         } 
         return (
         <Fragment>
-            { this.props.Login === 'success' && <Redirect to='/' /> }
+            { this.props.Login === 'SUCCESS' && <Redirect to='/' /> }
             <Navbar />
             <br />
             <br />
