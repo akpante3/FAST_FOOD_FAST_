@@ -2,7 +2,7 @@ import React from 'react';
 import { Fragment } from 'react';
 import { connect } from 'react-redux';
 import Navbar from './NavBar';
-import { runInThisContext } from 'vm';
+import { Redirect } from 'react-router-dom';
 import signUpAction from '../actions/signUpAction';
 
 
@@ -33,12 +33,14 @@ class SignUp extends React.Component {
     }
      
     render() {
-        if(this.props.signUp.data) {
+        console.log(this.props.signUp && this.props.signUp.data.status, 'component');
+        if(this.props.signUp && this.props.signUp.data.status === 'failure') {
             const message = document.querySelector(".error-message");
             message.innerHTML=this.props.signUp.data.message;
         } 
         return (
         <Fragment>
+            { this.props.signUp && this.props.signUp.data.status === 'success' && <Redirect to='/' /> }
             <Navbar />
             <br />
             <br />
@@ -74,7 +76,7 @@ class SignUp extends React.Component {
     }
 }
 const mapStateToprops = (state) => ({
-    signUp: state.signup,
+    signUp: state.signup.payload,
 });
 
 export default connect(mapStateToprops,{signUpAction})(SignUp);

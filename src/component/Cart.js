@@ -7,6 +7,7 @@ import CartCards from './CartCards';
 import placeAnOrderAction from '../actions/placeAnOrderAction';
 import updateOrderList from '../utils/updateOrderList';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 class Cart extends React.Component{
   constructor(props) {
@@ -15,7 +16,8 @@ class Cart extends React.Component{
           email: '',
           number: '',
           address:'',
-          quantity:''
+          quantity:'',
+          status:''
       }
       this.placeOrder = this.placeOrder.bind(this);
       this.addOrder = this.addOrder.bind(this)
@@ -36,7 +38,11 @@ class Cart extends React.Component{
            address: this.state.address,
        }
        const orders = JSON.parse(localStorage.getItem("orders"));
-       console.log(localStorage.getItem('access-token'))
+       orders.forEach(element => {
+        if(element.quantity < 1 || element.quantity > 10) {
+            console.log('iam')
+        }
+    });
        axios.defaults.headers.common['accessToken'] = localStorage.getItem('access-token');
        this.props.placeAnOrderAction(userDetails, orders);
        
@@ -45,8 +51,10 @@ class Cart extends React.Component{
   
     render() {
       let total = null;
+    
       return (
         <Fragment>
+          { this.props.placeAnOrder && this.props.placeAnOrder.status  === 'SUCCESS' && <Redirect to='/orders/success' /> }
         <article>
           <Navbar />
           <br />
@@ -101,7 +109,8 @@ class Cart extends React.Component{
   }
   
   const mapStateToprops = (state) => ({
-    cart: state.cart
+    cart: state.cart,
+    placeAnOrder: state.placeAnOrder,
   });
   
-  export default connect(mapStateToprops,{placeAnOrderAction})(Cart);;
+  export default connect(mapStateToprops,{placeAnOrderAction})(Cart);

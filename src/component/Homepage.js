@@ -42,7 +42,6 @@ class HomePage extends React.Component{
                 make amazing fast food orders
                 <br />
               with speedy delivery
-                {' '}
               </p>
               <input id='search-bar' type="text" name="search" placeholder="Search.." />
               <a href="#"><button id="submit" type="submit">Search</button></a>

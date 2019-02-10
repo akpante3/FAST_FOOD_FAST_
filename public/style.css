@@ -271,9 +271,9 @@ button:hover {
 .decline{
     background-color:  rgb(230, 75, 3);;
 }
-.info{
+/* .info{
     display:none;
-}
+} */
 
 .restore{
     background-color: rgb(191, 194, 1);
