@@ -1,3 +1,5 @@
 node_modules/
+node_modulesx/
+node_modulesxx/
 .nyc_output
 .env

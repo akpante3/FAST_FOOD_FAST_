@@ -8,4 +8,4 @@ global.render = render;
 global.mount = mount;
 global.React = React;
 
-Enzyme.configure({ adapter: new Adapter() });ß
+Enzyme.configure({ adapter: new Adapter() });

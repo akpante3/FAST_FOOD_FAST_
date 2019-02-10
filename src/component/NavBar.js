@@ -22,7 +22,7 @@ class NavBar extends React.Component {
         <input type="checkbox" id="nav-check" />
         <div className="nav-links">
           <Link to="./cart">Cart</Link>
-          <a href="./signIn.html">Sign In</a>
+          <Link to="/">Home</Link>
           <a href="./shoppingCart.html"><i className="fas fa-shopping-cart fa-1x shopping-cart-button" /></a>
         </div>
       </div>

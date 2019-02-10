@@ -5,7 +5,7 @@ import Navbar from './NavBar';
 import GetMenuAction from '../actions/getMenuActions';
 import addToCartAction from '../actions/addToCartAction';
 import Cards from './Cards';
-import '../../public/style.css';
+import '../../public/style.scss';
 
 
 class HomePage extends React.Component{
