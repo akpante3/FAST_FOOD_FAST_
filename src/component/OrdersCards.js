@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import Navbar from './NavBar';
-import '../../public/style.css';
+import '../../public/style.scss';
 import updateStatusAction from '../actions/updateStatusAction';
 
 class OrdersCards extends React.Component{

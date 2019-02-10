@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1549825262522" clover="3.2.0">
+  <project timestamp="1549825262522" name="All files">
+    <metrics statements="28" coveredstatements="22" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0" elements="33" coveredelements="22" complexity="0" loc="28" ncloc="28" packages="3" files="3" classes="3">
+      <package name="fast-food-react-version">
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="enzyme.config.js" path="/Users/victorobije/Desktop/fast-food-react-version/enzyme.config.js">
+          <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="fast-food-react-version.src.actions">
+        <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <file name="types.js" path="/Users/victorobije/Desktop/fast-food-react-version/src/actions/types.js">
+          <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+          <line num="1" count="1" type="stmt"/>
+          <line num="2" count="1" type="stmt"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="4" count="1" type="stmt"/>
+          <line num="5" count="1" type="stmt"/>
+          <line num="6" count="1" type="stmt"/>
+          <line num="7" count="1" type="stmt"/>
+          <line num="8" count="1" type="stmt"/>
+          <line num="9" count="1" type="stmt"/>
+          <line num="10" count="1" type="stmt"/>
+          <line num="11" count="1" type="stmt"/>
+          <line num="12" count="1" type="stmt"/>
+          <line num="13" count="1" type="stmt"/>
+          <line num="14" count="1" type="stmt"/>
+          <line num="15" count="1" type="stmt"/>
+        </file>
+      </package>
+      <package name="fast-food-react-version.src.reducers">
+        <metrics statements="8" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <file name="addtocartReducer.js" path="/Users/victorobije/Desktop/fast-food-react-version/src/reducers/addtocartReducer.js">
+          <metrics statements="8" coveredstatements="2" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+          <line num="3" count="1" type="stmt"/>
+          <line num="5" count="1" type="cond" truecount="0" falsecount="1"/>
+          <line num="6" count="0" type="cond" truecount="0" falsecount="3"/>
+          <line num="8" count="0" type="stmt"/>
+          <line num="9" count="0" type="stmt"/>
+          <line num="16" count="0" type="stmt"/>
+          <line num="17" count="0" type="stmt"/>
+          <line num="19" count="0" type="stmt"/>
+        </file>
+      </package>
+    </metrics>
+  </project>
+</coverage>

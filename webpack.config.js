@@ -1,0 +1,36 @@
+const path = require('path');
+
+module.exports = {
+  entry: './src/index.jsx',
+  output: {
+    path: path.resolve(__dirname, 'public'),
+    filename: 'bundle.js',
+  },
+  // output: {
+  //   filename: '[name].[hash].js',
+  //   path: path.resolve(__dirname, 'public'),
+  //   publicPath: '/',
+  // },
+  resolve: {
+    extensions: ['.jsx', '.js', '.json'],
+  },
+  mode: 'development',
+  module: {
+    rules: [
+      {
+        loader: 'babel-loader',
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.s?css$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+    ],
+  },
+  devtool: 'cheap-module-eval-source-map',
+  devServer: {
+    contentBase: path.join(__dirname, 'public'),
+    historyApiFallback: true,
+  },
+};

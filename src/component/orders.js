@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import Navbar from './NavBar';
-import '../../public/style.css';
+import '../../public/style.scss';
 import CartCards from './CartCards';
 import OrdersCards from './OrdersCards';
 import getAllOrders from '../actions/getAllOrdersAction';
@@ -30,6 +30,12 @@ toggleView () {
     render() {
         return (
             <Fragment>
+            <Navbar />
+            <br />
+            <br />
+            <br/>
+            <br />
+            <br />
             <div class="orders">
                 <div class="feature-header">
                   <h1>List of Orders</h1>
