@@ -158,7 +158,18 @@ describe('get all orders Reducers test suite', () => {
           {});
         expect(state).to.eql({ payload: '', status: '' });
       });
-    
-    // sign up reducer
 
+
+      it('returns inital state ', () => {
+        const initialState = {
+            payload: '',
+            status: '',
+          };
+        const state = addtocartReducer(initialState,
+          {
+            type: '',
+            payload: '',
+          });
+        expect(state).to.eql({ payload: '', status: '' });
+      });
 });

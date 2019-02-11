@@ -19,7 +19,6 @@ const signUpAction = (userDetails) => (dispatch) => {
               console.log(response, 'succcess');
             // if(response.status === 201) {
                 const token = response.data.data.token;
-                console.log(token, '00000');
                 dispatch({
                     type: SIGN_UP,
                     payload: response,
@@ -27,10 +26,7 @@ const signUpAction = (userDetails) => (dispatch) => {
                 })
          
             localStorage.setItem('access-token', token);
-            // return setAccessToken(token);
-        // }
     }).catch((error)=> {
-        console.log(error.response, '[[[[[[[[');
         dispatch({
             type: SIGN_UP_ERROR,
             payload: error.response,

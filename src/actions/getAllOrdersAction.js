@@ -9,7 +9,6 @@ return axios.get('https://fast-food-fast-food.herokuapp.com/api/v1/orders', {
         'accessToken' : window.localStorage.getItem('access-token')
     } })
         .then((response) => {
-        console.log(response.data.data);
             dispatch({
                 type: GET_ORDERS,
                 payload: response.data.data
