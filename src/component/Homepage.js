@@ -6,6 +6,7 @@ import GetMenuAction from '../actions/getMenuActions';
 import addToCartAction from '../actions/addToCartAction';
 import Cards from './Cards';
 import '../../public/style.scss';
+import Footer from './Footer';
 
 
 class HomePage extends React.Component{
@@ -26,11 +27,15 @@ class HomePage extends React.Component{
   }
 
   render() {
-
+    const home = 'Home';
     return (
       <Fragment>
         <article>
-          <Navbar />
+          <Navbar 
+          home={home}
+          login={'Login'}
+          cart={'Cart'}
+          />
           <br />
           <br />
           <br />
@@ -64,6 +69,7 @@ class HomePage extends React.Component{
             <h3>fast-food-fast   &copy 2018</h3>
           </footer>
         </article>
+        <Footer />
       </Fragment>
     );
   }

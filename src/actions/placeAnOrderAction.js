@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const placeAnOrderAction = (data, orders) => (dispatch) => {
 
-return axios.post('http://localhost:8000/api/v1/orders', { 
+return axios.post('https://api-fast-food.herokuapp.com/api/v1/orders', { 
     ...data,
     orders,
     headers : {

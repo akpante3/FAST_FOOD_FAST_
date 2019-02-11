@@ -8,6 +8,7 @@ import placeAnOrderAction from '../actions/placeAnOrderAction';
 import updateOrderList from '../utils/updateOrderList';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
+import Footer from './Footer';
 
 class Cart extends React.Component{
   constructor(props) {
@@ -56,7 +57,13 @@ class Cart extends React.Component{
         <Fragment>
           { this.props.placeAnOrder && this.props.placeAnOrder.status  === 'SUCCESS' && <Redirect to='/orders/success' /> }
         <article>
-          <Navbar />
+          <Navbar 
+          home={'Home'}
+          />
+          <br />
+          <br />
+          <br />
+          <br />
           <br />
           <br />
           <div className="shopping-cart">
@@ -102,6 +109,7 @@ class Cart extends React.Component{
                 </form>
               <p className="error-message"></p>
             </div>
+            <Footer />
         </article>
       </Fragment>    
       );

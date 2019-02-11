@@ -12,7 +12,7 @@ const signUpAction = (userDetails) => (dispatch) => {
         address
     } = userDetails;
 
-    return axios.post('http://localhost:8000/api/v1/auth/signup', {
+    return axios.post('https://api-fast-food.herokuapp.com/api/v1/auth/signup', {
         email, password, username, address
         })
           .then(data => {

@@ -4,7 +4,7 @@ import orders from '../component/orders';
 
 const GetMenuAction = () => (dispatch) => {
 
-return axios.get('http://localhost:8000/api/v1/menu')
+return axios.get('https://api-fast-food.herokuapp.com/api/v1/menu')
         .then((response) => {
         console.log(response.data.data);
             dispatch({
