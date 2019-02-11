@@ -1,6 +1,5 @@
 import { ADD_TO_CART, SET_CART } from '../actions/types';
 
-const intialState = [];
 
 const addtocartReducer = (state = intialState, action) => {
   switch (action.type) {
