@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // eslint-disable-next-line react/prefer-stateless-function
-class NavBar extends React.Component {
+export class NavBar extends React.Component {
   render() {
     return (
       <div className="nav">

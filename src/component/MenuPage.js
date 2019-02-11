@@ -11,7 +11,7 @@ import Footer from './Footer';
 
 
 
-class HomePage extends React.Component{
+class MenuPage extends React.Component{
   constructor(props) {
     super(props);
       this.state = {
@@ -30,16 +30,12 @@ class HomePage extends React.Component{
   }
 
   render() {
-    const home = 'Home';
-    if (localStorage.getItem("access-token")) {
       return (
         <Fragment>
-          <article>
+            <div>
             <Navbar 
-            home={home}
-            login={'Login'}
-            signup={'signup'}
-            cart={'Cart'}
+              home={'Home'}
+              cart={'Cart'}
             />
             <br />
             <br />
@@ -57,13 +53,13 @@ class HomePage extends React.Component{
               <br />
               <div className="content" >
               {this.props.menu && this.props.menu.map(item => (
-                 <Cards 
-                 cart={this.cart}
-                 food={item.food}
-                 image={item.image}
-                 price={item.price}
-                 foodId={item.foodid}
-                 />
+                <Cards 
+                  cart={this.cart}
+                  food={item.food}
+                  image={item.image}
+                  price={item.price}
+                  foodId={item.foodid}
+                />
               ))}
               </div>
               <br />
@@ -71,34 +67,17 @@ class HomePage extends React.Component{
             <footer>
               <h3>fast-food-fast   &copy 2018</h3>
             </footer>
-          </article>
-        </Fragment>
-      );
-    } else {
-      return (
-        <Fragment>
-        <article>
-          <Navbar 
-          login={'Login'}
-          signup={'signup'}
-          />
-          
-          <div class="mydiv">
-          <h1>Welcome to fast food fast</h1>
-          <p> Signup for an exciting food experience</p>
-          </div>
-              <img className='image-cover' src='https://www.pixelstalk.net/wp-content/uploads/2016/08/Burger-fast-food-wallpaper-hd-1080p-768x432.jpg' alt='image of food' />
-        </article>
-      </Fragment>
-      );
-    }
-
+            </div>
+          </ Fragment>
+          );
+        }
   }
-}
+
 
 const mapStateToprops = (state) => ({
   menu: state.getmenu.payload,
-  cart: state.cart
+  cart: state.cart,
+  signUp: state.signup.payload
 });
 
-export default connect(mapStateToprops,{GetMenuAction, addToCartAction})(HomePage);
+export default connect(mapStateToprops,{GetMenuAction, addToCartAction})(MenuPage);

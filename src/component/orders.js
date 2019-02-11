@@ -45,7 +45,6 @@ toggleView () {
                 </div>
                 <ul class="list"> 
                 {this.props.orders && this.props.orders.map((element)=> {
-                 { console.log(element)}
                   return <OrdersCards 
                   quantity={element.quantity} 
                   email={element.email}

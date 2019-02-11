@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import deleteFromcart from '../utils/deleteFromCart';
 
-const CartCards = (props) => {
+export const CartCards = (props) => {
     const storage = JSON.parse(localStorage.getItem('cartItems'));
     const ifExist = storage && storage.find(item => item.foodid == props.foodid);
     if (ifExist) {

@@ -36,7 +36,6 @@ class SignUp extends React.Component {
     render() {
         if(this.props.signUp && this.props.signUp.data.status === 'failure') {
             const message = document.querySelector(".error-message");
-            console.log(this.props.signUp.data.message)
             if(this.props.signUp.data.message == "error user was not created") {
               message.innerHTML= 'email has been used already';
             } else {
@@ -47,8 +46,7 @@ class SignUp extends React.Component {
         
         return (
         <Fragment>
-            {console.log(this.props.signUp, '****')}
-            { this.props.signUp && this.props.signUp.status === 201 && <Redirect to='/' /> }
+            { this.props.signUp && this.props.signUp.status === 201 && <Redirect to='/menu' /> }
             <Navbar 
             login={'Login'}/>
             <br />
