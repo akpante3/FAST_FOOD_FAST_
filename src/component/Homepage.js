@@ -31,39 +31,64 @@ class HomePage extends React.Component{
 
   render() {
     const home = 'Home';
-    return (
-      <Fragment>
+    if (localStorage.getItem("access-token")) {
+      return (
+        <Fragment>
+          <article>
+            <Navbar 
+            home={home}
+            login={'Login'}
+            signup={'signup'}
+            cart={'Cart'}
+            />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div className="home-page">
+              <div className="feature-header">
+                <h2>Featured Food</h2>
+                <p>
+                  make amazing fast food orders
+                  <br />
+                with speedy delivery
+                </p>
+              </div>
+              <br />
+              <div className="content" >
+              {this.props.menu && this.props.menu.map(item => (
+                 <Cards 
+                 cart={this.cart}
+                 food={item.food}
+                 image={item.image}
+                 price={item.price}
+                 foodId={item.foodid}
+                 />
+              ))}
+              </div>
+              <br />
+            </div>
+            <footer>
+              <h3>fast-food-fast   &copy 2018</h3>
+            </footer>
+          </article>
+        </Fragment>
+      );
+    } else {
+      return (
+        <Fragment>
         <article>
           <Navbar 
-          home={home}
           login={'Login'}
-          cart={'Cart'}
+          signup={'signup'}
           />
           <br />
           <br />
           <br />
           <br />
           <div className="home-page">
-            <div className="feature-header">
-              <h2>Featured Food</h2>
-              <p>
-                make amazing fast food orders
-                <br />
-              with speedy delivery
-              </p>
-            </div>
             <br />
-            <div className="content" >
-            {this.props.menu && this.props.menu.map(item => (
-               <Cards 
-               cart={this.cart}
-               food={item.food}
-               image={item.image}
-               price={item.price}
-               foodId={item.foodid}
-               />
-            ))}
-            </div>
+              <h1>PLEASE LOGIN/SIGN-UP TO SEE AVALAIBLE MEALS</h1>
             <br />
           </div>
           <footer>
@@ -71,7 +96,9 @@ class HomePage extends React.Component{
           </footer>
         </article>
       </Fragment>
-    );
+      );
+    }
+
   }
 }
 

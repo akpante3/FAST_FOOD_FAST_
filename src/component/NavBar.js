@@ -24,6 +24,7 @@ class NavBar extends React.Component {
           <Link to="./cart">{this.props.cart}</Link>
           <Link to="/">{this.props.home}</Link>
           <Link to="/login">{this.props.login}</Link>
+          <Link to="/signup">{this.props.signup}</Link>
           <a href="./shoppingCart.html"><i className="fas fa-shopping-cart fa-1x shopping-cart-button" /></a>
         </div>
       </div>
