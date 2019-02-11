@@ -5,7 +5,7 @@ import Navbar from './NavBar';
 import '../../public/style.scss';
 // import updateStatusAction from '../actions/updateStatusAction';
 
-class OrdersCards extends React.Component{
+export class OrdersCards extends React.Component{
   constructor(props) {
       super(props);
       this.state = {
@@ -21,24 +21,13 @@ toggleView () {
   });
 }
 
-// updateAnOrder (id, status) {
-//   console.log(id, status)
-//   this.props.updateStatusAction(id,status)
-
-// }
-
   render () {
-    const { showDetails } = this.state;
-    const accepted = <p>Order was accepted</p>
-    const declined = <p>Order was declined</p>
-    console.log(showDetails);
-
     return (
       <Fragment>
         <li>
           <h2>orderId : {this.props.orderId}</h2>
           <button class="info-button" onClick= {() => this.toggleView()}>info</button>
-          { showDetails ? 
+          { this.state.showDetails ? 
               <div class="info">
               <h3>Quantity of Order: {this.props.quantity}</h3>
               <br />
@@ -49,13 +38,10 @@ toggleView () {
               <h3>Date: {this.props.date}</h3>
               <br />
               <div>
-                {this.props.status === 'accepted' ? accepted : this.props.status === 'declined' ? declined 
-                :                <div>
+                <div>
                 <button class="decline" >Deline</button> 
                   <button class="accept">Accept</button>
                 </div>
-                 }
-
                   <div></div>
               </div>
           </div> 

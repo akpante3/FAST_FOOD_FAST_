@@ -29,7 +29,7 @@ class Login extends React.Component {
           this.props.logInAction(userDetails);
         }
     render() {
-        if(this.props.Login === 'FAILURE') {
+        if(this.props.Login && this.props.Login.status === 'FAILURE') {
             const message = document.querySelector(".error-message");
             message.innerHTML='Error user cant be logged in';
         } 
@@ -71,7 +71,7 @@ class Login extends React.Component {
 }
 
 const mapStateToprops = (state) => ({
-    Login: state.login.status
+    Login: state.login,
 });
 
 export default connect(mapStateToprops,{logInAction})(Login);

@@ -26,7 +26,7 @@ export default ( state = intialState, action) => {
                 password: null,
                 username: null,
                 address: null,
-                payloads: action.payload
+                payload: action.payload
             })
        default:
         state;
