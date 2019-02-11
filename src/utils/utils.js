@@ -1,12 +1,11 @@
 
 const setAccessToken = (token) => {
-    const Access_Key = 'access_token'
-    if(window.localStorage.getItem(Access_Key) === null){
-        window.localStorage.setItem(Access_Key, token);
+    if(window.localStorage.getItem('access-token') === null){
+        window.localStorage.setItem('access-token', token);
         return;
     }
-    localStorage.removeItem(Access_Key);
-    window.localStorage.setItem(Access_Key, token);
+    localStorage.removeItem('access-token');
+    window.localStorage.setItem('access-token', token);
 }
 
 export default setAccessToken;

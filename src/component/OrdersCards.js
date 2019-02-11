@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import Navbar from './NavBar';
 import '../../public/style.scss';
-import updateStatusAction from '../actions/updateStatusAction';
+// import updateStatusAction from '../actions/updateStatusAction';
 
 class OrdersCards extends React.Component{
   constructor(props) {
@@ -12,7 +12,7 @@ class OrdersCards extends React.Component{
           showDetails: false
       }
       this.toggleView = this.toggleView.bind(this);
-      this.updateAnOrder = this.updateAnOrder.bind(this);
+      // this.updateAnOrder = this.updateAnOrder.bind(this);
   }
   
 toggleView () {
@@ -21,11 +21,11 @@ toggleView () {
   });
 }
 
-updateAnOrder (id, status) {
-  console.log(id, status)
-  this.props.updateStatusAction(id,status)
+// updateAnOrder (id, status) {
+//   console.log(id, status)
+//   this.props.updateStatusAction(id,status)
 
-}
+// }
 
   render () {
     const { showDetails } = this.state;
@@ -51,8 +51,8 @@ updateAnOrder (id, status) {
               <div>
                 {this.props.status === 'accepted' ? accepted : this.props.status === 'declined' ? declined 
                 :                <div>
-                <button class="decline" onClick={() => this.updateAnOrder(this.props.orderId, 'declined')} >Deline</button> 
-                  <button class="accept" onClick={() => this.updateAnOrder(this.props.orderId, 'accepted')}>Accept</button>
+                <button class="decline" >Deline</button> 
+                  <button class="accept">Accept</button>
                 </div>
                  }
 
@@ -71,4 +71,4 @@ const mapStateToprops = (state) => ({
   orders: state.getallorders.payload,
 });
 
-export default connect(mapStateToprops,{updateStatusAction})(OrdersCards);
+export default connect(mapStateToprops,null)(OrdersCards);

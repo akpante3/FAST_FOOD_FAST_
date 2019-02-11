@@ -1,6 +1,9 @@
 import { PLACE_AN_ORDER, PLACE_AN_ORDER_ERROR } from '../actions/types';
 
-const intialState = [];
+const intialState = {
+  payload: '',
+  status: '',
+};
 
 const placeAnOrderReducer = (state = intialState, action) => {
   switch (action.type) {

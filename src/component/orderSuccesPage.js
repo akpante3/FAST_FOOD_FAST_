@@ -1,7 +1,8 @@
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import Navbar from './NavBar';
+import Footer from './Footer';
 
 const propTypes = {};
 
@@ -17,6 +18,9 @@ class orderSuccesPage extends React.Component {
     if(this.props.order) {
         return (
             <React.Fragment>
+            <Navbar 
+            home={'Home'}
+            />
             <br />
             <br />
             <br />
@@ -60,8 +64,8 @@ class orderSuccesPage extends React.Component {
             <br />
             <br />
             <hr />
+            <Footer />
             </React.Fragment> 
-
         );
     }
     }

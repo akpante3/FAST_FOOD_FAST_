@@ -12,22 +12,21 @@ const signUpAction = (userDetails) => (dispatch) => {
         address
     } = userDetails;
 
-    return axios.post('http://localhost:8000/api/v1/auth/signup', {
+    return axios.post('https://fast-food-fast-food.herokuapp.com/api/v1/auth/signup', {
         email, password, username, address
         })
-          .then(data => {
-              console.log(data, 'succcess');
+          .then(response => {
+              console.log(response, 'succcess');
             // if(response.status === 201) {
+                const token = response.data.data.token;
                 dispatch({
                     type: SIGN_UP,
-                    payload: data,
+                    payload: response,
                     status: 'SUCCESS'
                 })
-            const token = response.data.data.token;
-            return setAccessToken(token);
-        // }
+         
+            localStorage.setItem('access-token', token);
     }).catch((error)=> {
-        console.log(error.response, '[[[[[[[[');
         dispatch({
             type: SIGN_UP_ERROR,
             payload: error.response,

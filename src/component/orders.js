@@ -6,6 +6,7 @@ import '../../public/style.scss';
 import CartCards from './CartCards';
 import OrdersCards from './OrdersCards';
 import getAllOrders from '../actions/getAllOrdersAction';
+import Footer from './Footer';
 // import placeAnOrderAction from '../actions/placeAnOrderAction';
 // import updateOrderList from '../utils/updateOrderList';
 // import axios from 'axios';
@@ -30,7 +31,9 @@ toggleView () {
     render() {
         return (
             <Fragment>
-            <Navbar />
+            <Navbar 
+            home={'Home'}
+            />
             <br />
             <br />
             <br/>
@@ -54,6 +57,7 @@ toggleView () {
                 })}
                 </ul>
             </div> 
+            <Footer />
             </Fragment>
         );
     }

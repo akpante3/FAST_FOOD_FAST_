@@ -1,7 +1,10 @@
 
 import { GET_MENU } from '../actions/types';
 
-const intialState = [];
+const intialState = {
+  payload: '',
+  status: '',
+};
 
 const getMenuReducer = (state = intialState, action) => {
   switch (action.type) {

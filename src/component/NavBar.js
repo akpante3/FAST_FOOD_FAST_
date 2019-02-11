@@ -21,9 +21,9 @@ class NavBar extends React.Component {
 
         <input type="checkbox" id="nav-check" />
         <div className="nav-links">
-          <Link to="./cart">Cart</Link>
-          <Link to="/">Home</Link>
-          <Link to="/login">Home</Link>
+          <Link to="./cart">{this.props.cart}</Link>
+          <Link to="/">{this.props.home}</Link>
+          <Link to="/login">{this.props.login}</Link>
           <a href="./shoppingCart.html"><i className="fas fa-shopping-cart fa-1x shopping-cart-button" /></a>
         </div>
       </div>

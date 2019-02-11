@@ -3,6 +3,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { Fragment } from 'react';
 import Navbar from './NavBar';
+import Footer from './Footer';
 
 import logInAction from '../actions/logInActions';
 
@@ -35,7 +36,9 @@ class Login extends React.Component {
         return (
         <Fragment>
             { this.props.Login === 'SUCCESS' && <Redirect to='/' /> }
-            <Navbar />
+            <Navbar 
+            home={'Home'}
+            />
             <br />
             <br />
             <br/>
@@ -61,6 +64,7 @@ class Login extends React.Component {
                     </div>
                     <p className="error-message"></p>
             </form>
+            <Footer />
         </Fragment>
         );
     }

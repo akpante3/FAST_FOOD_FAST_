@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Navbar from './NavBar';
 import { Redirect } from 'react-router-dom';
 import signUpAction from '../actions/signUpAction';
+import Footer from './Footer';
 
 
 class SignUp extends React.Component {
@@ -41,7 +42,8 @@ class SignUp extends React.Component {
         return (
         <Fragment>
             { this.props.signUp && this.props.signUp.data.status === 'success' && <Redirect to='/' /> }
-            <Navbar />
+            <Navbar 
+            login={'Login'}/>
             <br />
             <br />
             <br/>
@@ -71,6 +73,7 @@ class SignUp extends React.Component {
                         </div>
                         <p className="error-message"></p>
              </form>
+             <Footer />
         </Fragment>
         );
     }
