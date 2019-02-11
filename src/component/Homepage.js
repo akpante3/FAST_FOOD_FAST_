@@ -82,18 +82,12 @@ class HomePage extends React.Component{
           login={'Login'}
           signup={'signup'}
           />
-          <br />
-          <br />
-          <br />
-          <br />
-          <div className="home-page">
-            <br />
-              <h1>PLEASE LOGIN/SIGN-UP TO SEE AVALAIBLE MEALS</h1>
-            <br />
+          
+          <div class="mydiv">
+          <h1>Welcome to fast food fast</h1>
+          <p> Signup for an exciting food experience</p>
           </div>
-          <footer>
-            <h3>fast-food-fast   &copy 2018</h3>
-          </footer>
+              <img className='image-cover' src='https://www.pixelstalk.net/wp-content/uploads/2016/08/Burger-fast-food-wallpaper-hd-1080p-768x432.jpg' alt='image of food' />
         </article>
       </Fragment>
       );
