@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import axios from 'axios';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import Navbar from './NavBar';
@@ -7,6 +8,7 @@ import addToCartAction from '../actions/addToCartAction';
 import Cards from './Cards';
 import '../../public/style.scss';
 import Footer from './Footer';
+
 
 
 class HomePage extends React.Component{
@@ -19,6 +21,7 @@ class HomePage extends React.Component{
     }
 
   componentWillMount() {
+    axios.defaults.headers.common['accessToken'] = localStorage.getItem('access-token');
     this.props.GetMenuAction();
   }
 
@@ -48,8 +51,6 @@ class HomePage extends React.Component{
                 <br />
               with speedy delivery
               </p>
-              <input id='search-bar' type="text" name="search" placeholder="Search.." />
-              <a href="#"><button id="submit" type="submit">Search</button></a>
             </div>
             <br />
             <div className="content" >
@@ -69,7 +70,6 @@ class HomePage extends React.Component{
             <h3>fast-food-fast   &copy 2018</h3>
           </footer>
         </article>
-        <Footer />
       </Fragment>
     );
   }

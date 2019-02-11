@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const updateStatusAction = (id, status) => (dispatch) => {
 axios.defaults.headers.common['accessToken'] = localStorage.getItem('access-token');
-return axios.put(`https://api-fast-food.herokuapp.com/api/v1/orders/${id}`, {
+return axios.put(`https://fast-food-fast-food.herokuapp.com/api/v1/orders/${id}`, {
     status,
     headers : {
         'Access-Control-Allow-Origin': '*',

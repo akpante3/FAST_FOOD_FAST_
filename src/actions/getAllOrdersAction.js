@@ -1,9 +1,9 @@
 import axios from 'axios';
 import  { GET_ORDERS, GET_ORDERS_ERROR } from './types';
 
-
+// https://api-fast-food.herokuapp.com/api/v1/auth/signup
 const GetAllOrdersAction = () => (dispatch) => {
-return axios.get('http://localhost:8000/api/v1/orders', {
+return axios.get('https://fast-food-fast-food.herokuapp.com/api/v1/orders', {
     headers : {
         'Access-Control-Allow-Origin': '*',
         'accessToken' : window.localStorage.getItem('access-token')

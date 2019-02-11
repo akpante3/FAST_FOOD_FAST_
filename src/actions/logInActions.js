@@ -10,7 +10,7 @@ const logInAction = (userDetails) => (dispatch) => {
         password,
     } = userDetails;
  
-    return axios.post('https://api-fast-food.herokuapp.com/api/v1/auth/login', {
+    return axios.post('https://fast-food-fast-food.herokuapp.com/api/v1/auth/login', {
        email, password,
         })
           .then((response) => {
@@ -20,7 +20,7 @@ const logInAction = (userDetails) => (dispatch) => {
                     payload: response
                 })
              const token = response.data.data.token;
-             setAccessToken(token);
+             localStorage.setItem('access-token', token);
             }else if(response.data.status === 'failure') {
                 dispatch({
                     type: LOG_IN_ERROR,

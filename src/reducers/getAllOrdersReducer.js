@@ -1,6 +1,9 @@
 import { GET_ORDERS } from '../actions/types';
 
-const intialState = [];
+const intialState = {
+  payload: '',
+  status: '',
+};
 
 const getAllOrdersReducer = (state = intialState, action) => {
   switch (action.type) {

@@ -1,10 +1,9 @@
 import { LOG_IN, LOG_IN_ERROR}from '../actions/types';
 
 const intialState = {
-    email: '',
-    password: '',
+    payload: '',
     status: '',
-}
+  }
 
 export default ( state= intialState, action) => {
    switch( action.type ){
