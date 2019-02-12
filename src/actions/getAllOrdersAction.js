@@ -14,7 +14,6 @@ return axios.get('https://fast-food-fast-food.herokuapp.com/api/v1/orders', {
                 payload: response.data.data
             });
     }).catch((error)=> {
-        console.log(error.message);
         dispatch({
             type: GET_ORDERS_ERROR,
             payload:'failure you have an error'

@@ -9,6 +9,7 @@ import updateOrderList from '../utils/updateOrderList';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 class Cart extends React.Component{
   constructor(props) {
@@ -57,7 +58,7 @@ class Cart extends React.Component{
           { this.props.placeAnOrder && this.props.placeAnOrder.status  === 'SUCCESS' && <Redirect to='/orders/success' /> }
         <article>
           <Navbar 
-          home={'Home'}
+          home={<Link to="/">Home</Link>}
           />
           <br />
           <br />

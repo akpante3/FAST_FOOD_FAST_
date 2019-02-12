@@ -5,6 +5,7 @@ import Navbar from './NavBar';
 import { Redirect } from 'react-router-dom';
 import signUpAction from '../actions/signUpAction';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 
 class SignUp extends React.Component {
@@ -48,7 +49,8 @@ class SignUp extends React.Component {
         <Fragment>
             { this.props.signUp && this.props.signUp.status === "success" && <Redirect to='/menu' /> }
             <Navbar 
-            login={'Login'}/>
+            login={<Link to="/login">login</Link>}
+            />
             <br />
             <br />
             <br/>

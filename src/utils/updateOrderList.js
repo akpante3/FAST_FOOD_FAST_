@@ -17,7 +17,6 @@ const updateOrderList = (e, foodid) => {
         } else {
          const newOrder = [...orders, item];
          localStorage.setItem("orders", JSON.stringify(newOrder));
-          console.log(item);
         }
       // if orders have not been created in local storage
        } else {

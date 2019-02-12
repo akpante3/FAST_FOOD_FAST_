@@ -1,7 +1,6 @@
 import  { ADD_TO_CART, ADD_TO_CART_ERROR, SET_CART } from './types';
 
 export const setCartItems = (data) => {
-    console.log(data)
     return {
         type: SET_CART,
         payload: data

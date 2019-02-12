@@ -8,6 +8,7 @@ import addToCartAction from '../actions/addToCartAction';
 import Cards from './Cards';
 import '../../public/style.scss';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 
 
@@ -34,8 +35,8 @@ class MenuPage extends React.Component{
         <Fragment>
             <div>
             <Navbar 
-              home={'Home'}
-              cart={'Cart'}
+              home={<Link to="/">Home</Link>}
+              cart={ <Link to="./cart">Cart</Link> }
             />
             <br />
             <br />

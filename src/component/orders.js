@@ -7,9 +7,8 @@ import CartCards from './CartCards';
 import OrdersCards from './OrdersCards';
 import getAllOrders from '../actions/getAllOrdersAction';
 import Footer from './Footer';
-// import placeAnOrderAction from '../actions/placeAnOrderAction';
-// import updateOrderList from '../utils/updateOrderList';
-// import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 class Orders extends React.Component{
 constructor(props) {
@@ -32,7 +31,7 @@ toggleView () {
         return (
             <Fragment>
             <Navbar 
-            home={'Home'}
+            home={<Link to="/">Home</Link>}
             />
             <br />
             <br />

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Navbar from './NavBar';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 const propTypes = {};
 
@@ -19,7 +20,7 @@ class orderSuccesPage extends React.Component {
         return (
             <React.Fragment>
             <Navbar 
-            home={'Home'}
+            home={<Link to="/">Home</Link>}
             />
             <br />
             <br />
@@ -34,7 +35,7 @@ class orderSuccesPage extends React.Component {
                 <ul class="detail">
                     <br />
                     <li>
-                        <h4>Delivered to: {this.props.order.timeOrdered}</h4>
+                        <h4>Delivered to: {this.props.order.address}</h4>
                         <br />
                         <h4>orderId: {this.props.order.orderID}</h4>
                         <br />

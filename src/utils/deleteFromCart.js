@@ -1,5 +1,4 @@
 const deleteFromcart = (foodid) => {
-    console.log('i am');
     const cartItems = JSON.parse(localStorage.getItem("cartItems"));
     const ifExist = cartItems && cartItems.find(item => item.foodid === foodid);
   if (ifExist) {

@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../component/NavBar';
 import '../../public/style.scss';
+import { Link } from 'react-router-dom';
 
 
 export default class LandingPage extends React.Component {
@@ -13,8 +14,8 @@ export default class LandingPage extends React.Component {
         return (
             <React.Fragment>
               <Navbar 
-                login={'Login'}
-                signup={'signup'}
+                login={<Link to="/login">Login</Link>}
+                signup={<Link to="/signup">Signup</Link>}
               />
               <div class="headers">
                 <h1>Welcome...</h1>

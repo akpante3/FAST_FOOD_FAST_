@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 
 // eslint-disable-next-line react/prefer-stateless-function
 export class NavBar extends React.Component {
@@ -21,10 +21,10 @@ export class NavBar extends React.Component {
 
         <input type="checkbox" id="nav-check" />
         <div className="nav-links">
-          <Link to="./cart">{this.props.cart}</Link>
-          <Link to="/">{this.props.home}</Link>
-          <Link to="/login">{this.props.login}</Link>
-          <Link to="/signup">{this.props.signup}</Link>
+          {this.props.cart}
+          {this.props.home}
+          {this.props.login}
+          {this.props.signup}
           <a href="./shoppingCart.html"><i className="fas fa-shopping-cart fa-1x shopping-cart-button" /></a>
         </div>
       </div>

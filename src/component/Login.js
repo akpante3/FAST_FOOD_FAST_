@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { Fragment } from 'react';
 import Navbar from './NavBar';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 import logInAction from '../actions/logInActions';
 
@@ -37,7 +38,7 @@ class Login extends React.Component {
         <Fragment>
             { this.props.Login === 'SUCCESS' && <Redirect to='/menu' /> }
             <Navbar 
-            home={'Home'}
+            signup={<Link to="/signup">Signup</Link>}
             />
             <br />
             <br />
