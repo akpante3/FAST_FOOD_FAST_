@@ -25,6 +25,7 @@ export class NavBar extends React.Component {
           {this.props.home}
           {this.props.login}
           {this.props.signup}
+          {this.props.logout}
           <a href="./shoppingCart.html"><i className="fas fa-shopping-cart fa-1x shopping-cart-button" /></a>
         </div>
       </div>

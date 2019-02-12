@@ -31,7 +31,7 @@ toggleView () {
         return (
             <Fragment>
             <Navbar 
-            home={<Link to="/">Home</Link>}
+            home={<Link to="/">Menu</Link>}
             />
             <br />
             <br />

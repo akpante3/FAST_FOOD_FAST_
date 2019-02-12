@@ -21,8 +21,8 @@ class MenuPage extends React.Component{
       this.cart = this.cart.bind(this);
     }
 
-  componentWillMount() {
-    axios.defaults.headers.common['accessToken'] = localStorage.getItem('access-token');
+  componentDidMount() {
+    // axios.defaults.headers.common['accessToken'] = localStorage.getItem('access-token');
     this.props.GetMenuAction();
   }
 
@@ -35,7 +35,7 @@ class MenuPage extends React.Component{
         <Fragment>
             <div>
             <Navbar 
-              home={<Link to="/">Home</Link>}
+              logout={<Link to="/">Logout</Link>}
               cart={ <Link to="./cart">Cart</Link> }
             />
             <br />

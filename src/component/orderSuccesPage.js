@@ -20,7 +20,8 @@ class orderSuccesPage extends React.Component {
         return (
             <React.Fragment>
             <Navbar 
-            home={<Link to="/">Home</Link>}
+            home={<Link to="/menu">Menu</Link>}
+            logout={<Link to="/">Logout</Link>}
             />
             <br />
             <br />

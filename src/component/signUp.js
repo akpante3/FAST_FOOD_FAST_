@@ -31,7 +31,9 @@ class SignUp extends React.Component {
             address: this.state.address,
             data: this.state.data
         }
-      this.props.signUpAction(userDetails);
+        this.props.signUpAction(userDetails, this.props.history);
+
+    //   this.props.signUpAction(userDetails);
     }
      
     render() {
@@ -47,7 +49,7 @@ class SignUp extends React.Component {
         
         return (
         <Fragment>
-            { this.props.signUp && this.props.signUp.status === "success" && <Redirect to='/menu' /> }
+            {/* this.props.signUp && this.props.signUp.status === "success" && <Redirect to='/menu' /> */}
             <Navbar 
             login={<Link to="/login">login</Link>}
             />

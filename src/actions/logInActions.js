@@ -4,7 +4,7 @@ import axios from 'axios';
 import setAccessToken from '../utils/utils';
 
 
-const logInAction = (userDetails) => (dispatch) => {
+const logInAction = (userDetails, history) => (dispatch) => {
     const {
         email,
         password,
@@ -14,20 +14,15 @@ const logInAction = (userDetails) => (dispatch) => {
        email, password,
         })
           .then((response) => {
-            if(response.status === 200) {
                 dispatch({
                     type: LOG_IN,
                     payload: response
                 })
              const token = response.data.data.token;
              localStorage.setItem('access-token', token);
-            }else if(response.data.status === 'failure') {
-                dispatch({
-                    type: LOG_IN_ERROR,
-                    payload:response.data.message
-                 })
-               
-            }
+             axios.defaults.headers.common['accessToken'] = localStorage.getItem('access-token');
+             history.push("/menu");
+  
         }).catch((error)=> {
             dispatch({
                 type: LOG_IN_ERROR,

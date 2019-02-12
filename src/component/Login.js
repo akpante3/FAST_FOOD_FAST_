@@ -27,7 +27,7 @@ class Login extends React.Component {
                 email: this.state.email,
                 password: this.state.password,
             }
-          this.props.logInAction(userDetails);
+          this.props.logInAction(userDetails, this.props.history);
         }
     render() {
         if(this.props.Login && this.props.Login.status === 'FAILURE') {

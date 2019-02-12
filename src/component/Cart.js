@@ -58,7 +58,7 @@ class Cart extends React.Component{
           { this.props.placeAnOrder && this.props.placeAnOrder.status  === 'SUCCESS' && <Redirect to='/orders/success' /> }
         <article>
           <Navbar 
-          home={<Link to="/">Home</Link>}
+          home={<Link to="/menu">Menu</Link>}
           />
           <br />
           <br />

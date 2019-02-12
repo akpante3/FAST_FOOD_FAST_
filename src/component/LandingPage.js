@@ -11,6 +11,7 @@ export default class LandingPage extends React.Component {
     }
 
     render() {
+        localStorage.setItem('access-token', '');
         return (
             <React.Fragment>
               <Navbar 

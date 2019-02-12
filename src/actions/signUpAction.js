@@ -4,7 +4,7 @@ import setAccessToken from '../utils/utils';
 import axios from 'axios';
 
 
-const signUpAction = (userDetails) => (dispatch) => {
+const signUpAction = (userDetails, history) => (dispatch) => {
     const {
         email,
         password,
@@ -16,15 +16,16 @@ const signUpAction = (userDetails) => (dispatch) => {
         email, password, username, address
         })
           .then(response => {
-            // if(response.status === 201) {
                 const token = response.data.data.token;
                 dispatch({
                     type: SIGN_UP,
                     payload: response,
                     status: 'SUCCESS'
                 })
-         
             localStorage.setItem('access-token', token);
+            axios.defaults.headers.common['accessToken'] = localStorage.getItem('access-token');
+            history.push("/menu");
+
     }).catch((error)=> {
         dispatch({
             type: SIGN_UP_ERROR,
