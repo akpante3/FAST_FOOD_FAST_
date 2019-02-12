@@ -17,7 +17,7 @@ const placeAnOrderReducer = (state = intialState, action) => {
       case PLACE_AN_ORDER_ERROR:
       return ({
         ...state,
-        payload: action.payload,
+        payload: action.payload.data,
         status: 'FAILURE',
       });
 

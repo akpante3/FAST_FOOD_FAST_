@@ -16,7 +16,7 @@ export default class LandingPage extends React.Component {
                 login={'Login'}
                 signup={'signup'}
               />
-              <div class="mydiv">
+              <div class="headers">
                 <h1>Welcome...</h1>
                 <p> Signup for an exciting food experience</p>
               </div>

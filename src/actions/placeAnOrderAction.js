@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const placeAnOrderAction = (data, orders) => (dispatch) => {
 
-return axios.post(`${process.env.BASE_URL_PROD}/api/v1/orders`, { 
+return axios.post('https://fast-food-fast-food.herokuapp.com/api/v1/orders', { 
     ...data,
     orders,
     headers : {
@@ -19,10 +19,10 @@ return axios.post(`${process.env.BASE_URL_PROD}/api/v1/orders`, {
             });
             localStorage.setItem("cartItems", "")
     }).catch((error)=> {
-        console.log(error);
+        console.log(error.response.data,   'guhij');
         dispatch({
             type: PLACE_AN_ORDER_ERROR,
-            payload:'failure you have an error'
+            payload: error.response,
             })
     });  
 }

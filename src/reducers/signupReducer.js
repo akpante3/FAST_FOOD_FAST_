@@ -16,7 +16,7 @@ export default ( state = intialState, action) => {
             password: action.payload.password,
             username: action.payload.username,
             address: action.payload.address,
-            payload: action.payload
+            payload: action.payload.data
            })
        
         case SIGN_UP_ERROR:
@@ -26,7 +26,7 @@ export default ( state = intialState, action) => {
                 password: null,
                 username: null,
                 address: null,
-                payload: action.payload
+                payload: action.payload.data
             })
        default:
         state;

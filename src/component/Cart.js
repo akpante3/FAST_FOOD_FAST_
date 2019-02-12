@@ -39,19 +39,18 @@ class Cart extends React.Component{
            address: this.state.address,
        }
        const orders = JSON.parse(localStorage.getItem("orders"));
-       orders.forEach(element => {
-        if(element.quantity < 1 || element.quantity > 10) {
-            console.log('iam')
-        }
-    });
        axios.defaults.headers.common['accessToken'] = localStorage.getItem('access-token');
        this.props.placeAnOrderAction(userDetails, orders);
-       
    }
   
   
     render() {
       let total = null;
+    if(this.props.placeAnOrder && this.props.placeAnOrder.status === 'FAILURE') {
+      const message = document.querySelector(".error-message");
+      message.innerHTML=this.props.placeAnOrder.payload.message;
+    }
+    
     
       return (
         <Fragment>
