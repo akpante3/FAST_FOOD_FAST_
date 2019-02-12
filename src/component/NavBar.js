@@ -8,7 +8,7 @@ export class NavBar extends React.Component {
       <div className="nav">
         <div className="nav-header">
           <div className="nav-title">
-            <a href="./index.html">fast-food</a>
+            <a href="/">fast-food</a>
           </div>
         </div>
         <div className="nav-btn">

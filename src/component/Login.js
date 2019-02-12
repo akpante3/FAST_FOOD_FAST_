@@ -35,7 +35,7 @@ class Login extends React.Component {
         } 
         return (
         <Fragment>
-            { this.props.Login === 'SUCCESS' && <Redirect to='/' /> }
+            { this.props.Login === 'SUCCESS' && <Redirect to='/menu' /> }
             <Navbar 
             home={'Home'}
             />

@@ -34,19 +34,19 @@ class SignUp extends React.Component {
     }
      
     render() {
-        if(this.props.signUp && this.props.signUp.data.status === 'failure') {
+        if(this.props.signUp && this.props.signUp.status === 'failure') {
             const message = document.querySelector(".error-message");
-            if(this.props.signUp.data.message == "error user was not created") {
+            if(this.props.signUp.message == "error user was not created") {
               message.innerHTML= 'email has been used already';
             } else {
-                message.innerHTML=this.props.signUp.data.message;
+                message.innerHTML=this.props.signUp.message;
             }
             
         } 
         
         return (
         <Fragment>
-            { this.props.signUp && this.props.signUp.status === 201 && <Redirect to='/menu' /> }
+            { this.props.signUp && this.props.signUp.status === "success" && <Redirect to='/menu' /> }
             <Navbar 
             login={'Login'}/>
             <br />

@@ -10,7 +10,7 @@ const logInAction = (userDetails) => (dispatch) => {
         password,
     } = userDetails;
  
-    return axios.post('https://fast-food-fast-food.herokuapp.com/api/v1/auth/login', {
+    return axios.post(`${process.env.BASE_URL_PROD}/api/v1/auth/login`, {
        email, password,
         })
           .then((response) => {
