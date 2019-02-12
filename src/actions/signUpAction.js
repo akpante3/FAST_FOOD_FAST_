@@ -12,7 +12,7 @@ const signUpAction = (userDetails) => (dispatch) => {
         address
     } = userDetails;
 
-    return axios.post('https://fast-food-fast-food.herokuapp.com/api/v1/auth/signup', {
+    return axios.post(`${process.env.BASE_URL_PROD}/api/v1/auth/signup`, {
         email, password, username, address
         })
           .then(response => {
