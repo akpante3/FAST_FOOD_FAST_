@@ -14,7 +14,6 @@ return axios.get(`${process.env.BASE_URL_PROD}/api/v1/orders`, {
                 payload: response.data.data
             });
     }).catch((error)=> {
-        console.log(error.message);
         dispatch({
             type: GET_ORDERS_ERROR,
             payload:'failure you have an error'

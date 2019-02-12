@@ -11,7 +11,6 @@ return axios.get(`${process.env.BASE_URL_PROD}/api/v1/menu`)
                 payload: response.data.data
             });
     }).catch((error)=> {
-        console.log(error.message);
         dispatch({
             type: GET_MENU_ERROR,
             payload:'failure you have an error'

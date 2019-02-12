@@ -16,8 +16,6 @@ const signUpAction = (userDetails) => (dispatch) => {
         email, password, username, address
         })
           .then(response => {
-              console.log(response, 'succcess');
-            // if(response.status === 201) {
                 const token = response.data.data.token;
                 dispatch({
                     type: SIGN_UP,
